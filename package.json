@@ -1,0 +1,36 @@
+{
+  "name": "dsh-deepseek-usage",
+  "version": "0.1.0",
+  "description": "DeepSeek API usage dashboard for dsh: live balance, per-period request/cost/token stats with deltas, and a trend chart (cost / requests / tokens).",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "client": {
+      "inject": [
+        "slots"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/types/**/*.d.ts"
+  ],
+  "dependencies": {
+    "@deepseek-ai/dsh-credentials": "^0.1.0-rc.6"
+  },
+  "license": "MIT"
+}

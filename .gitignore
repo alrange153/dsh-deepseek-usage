@@ -1,0 +1,13 @@
+# dependencies
+node_modules/
+
+# logs & env
+*.log
+.env
+.env.*
+
+# editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
