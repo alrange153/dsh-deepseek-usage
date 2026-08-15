@@ -34,19 +34,15 @@ DEEPSEEK_PLATFORM_TOKEN: <你的 platform.deepseek.com userToken>
 
 ## 安装
 
-1. 确保 `dsh` 在 PATH（本机位于 `...\_npx\1e7f6d9597241db0\node_modules\.bin`）。
-2. 插件已装入 web profile（`$DSH_HOME/profiles/web`）：
-   - 包体位于 `$DSH_HOME/profiles/node_modules/dsh-deepseek-usage/`（已随本仓库手动同步）；
-   - `cordis.patch.yml` 已插入 `deepseek-usage` 行；
-   - `package.json` 已记录 `file:` 依赖。
-
-> 注意：插件行在进程启动时组合，**已运行的 `dsh web` 需要重启后仪表盘才会出现**（client-modules 的包元数据在启动时缓存）。重启方式：结束当前 `dsh web` 进程后重新 `dsh web`。
-
-如果之后在 profile 里执行过 `pnpm install` 导致包被移除，重新安装：
+1. 确保 `dsh` 已安装且在 PATH 中（可用 `dsh --version` 验证）。
+2. 克隆本仓库，并将其添加到 web profile：
 
 ```sh
-dsh plugin --profile web add C:/Users/g/Desktop/dsh_token_usage/plugins/dsh-deepseek-usage
+git clone https://github.com/alrange153/dsh-deepseek-usage.git
+dsh plugin --profile web add ./dsh-deepseek-usage
 ```
+
+> 注意：插件行在进程启动时组合，**已运行的 `dsh web` 需要重启后仪表盘才会出现**（client-modules 的包元数据在启动时缓存）。重启方式：结束当前 `dsh web` 进程后重新 `dsh web`。
 
 ## 使用
 
